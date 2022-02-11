@@ -6,7 +6,7 @@ module.exports = async function connection() {
             useNewUrlParser: true,
             useUnifiedTopology: true
         }
-        await mongoose.connect('mongodb+srv://admin:admin@cluster0.868sz.mongodb.net/ucc?retryWrites=true&w=majority', connectionParams);
+        await mongoose.connect(process.env.DB_CONNECTION, connectionParams);
         console.log('Connected to database');
     } catch (error) {
         console.error(error);
